@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+  if(get_field("link_url_valid_kbn")) {
+    wp_safe_redirect( get_field("link_url"), 302 );
+    exit;
+  } 
+  get_header();
+?>
 <div class="page-main" id="pg-newsDetail">
   <div class="main-container newsDetail">
     <div class="main-wrapper">
