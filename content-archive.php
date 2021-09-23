@@ -8,9 +8,9 @@
   <div class="link">
     <?php if(get_field("link_url_valid_kbn")):?>
       <a href="<?php the_field("link_url"); ?>">
-    <? else: ?>
+    <?php else: ?>
       <a href="<?php the_permalink(); ?>">
-    <? endif; ?>
+    <?php endif; ?>
       <?php the_title(); ?>
     </a>
   </div><!-- /.link -->
