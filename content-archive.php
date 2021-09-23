@@ -6,6 +6,12 @@
     <?php endif; ?>
   </div><!-- /.label -->
   <div class="link">
-    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+    <?php if(get_field("link_url_valid_kbn")):?>
+      <a href="<?php the_field("link_url"); ?>">
+    <? else: ?>
+      <a href="<?php the_permalink(); ?>">
+    <? endif; ?>
+      <?php the_title(); ?>
+    </a>
   </div><!-- /.link -->
 </div>

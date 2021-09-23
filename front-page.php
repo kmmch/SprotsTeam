@@ -36,7 +36,13 @@
         <?php if( get_the_date() >= date('Y.m.d',strtotime("-1 week")) ): ?>
           <span class="new-label">NEW</span>
         <?php endif; ?>
-        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <?php if(get_field("link_url_valid_kbn")):?>
+          <a href="<?php the_field("link_url"); ?>">
+        <? else: ?>
+          <a href="<?php the_permalink(); ?>">
+        <? endif; ?>
+            <?php the_title(); ?>
+          </a>
       </li>
       <?php
         endwhile;
